@@ -15,7 +15,8 @@ main {
 }
 
 select {
-  margin: 2rem;
+  margin: 1rem;
+  padding: 0.5rem;
 }
 
 a {
