@@ -10,19 +10,24 @@ let currentSketch: SketchKey = "ParticleSystem";
 const app = document.querySelector<HTMLDivElement>("#app")!;
 
 app.innerHTML = `
-  ${Header(`${currentSketch} Animation`)}
+  ${Header(`${currentSketch}`)}
   <main>
-    ${SketchSelector(Object.keys(sketchMap))}
-    ${SketchContainer()}
+  ${SketchSelector(SELECT_ID, Object.keys(sketchMap))}
+  ${SketchContainer(CONTAINER_ID)}
   </main>
 `;
 
 function fillSketchContainer() {
-  const container = document.getElementById(CONTAINER_ID); // Get the sketch container
-  container?.removeChild(container.childNodes[0]); // Remove existing animation
-  const sketchDiv = document.createElement("div"); // Make a div for the sketch
-  sketchDiv.id = "sketch"; // Give the div an id
-  container?.appendChild(sketchDiv); // Add this div to the sketch container
+  // Get the sketch container
+  const container = document.querySelector<HTMLDivElement>("#" + CONTAINER_ID);
+  // Remove existing animation
+  container?.removeChild(container.childNodes[0]);
+  // Make a div for the sketch
+  const sketchDiv = document.createElement("div");
+  // Give the div an id
+  sketchDiv.id = "sketch";
+  // Add this div to the sketch container
+  container?.appendChild(sketchDiv);
 
   // Initialise the p5.js object which contains the sketch
   new p5(sketchMap[currentSketch], sketchDiv);
@@ -40,7 +45,10 @@ function selectNewSketch(key: SketchKey) {
 function init() {
   try {
     // Firstly, add an event listener to the existing select input
-    const selector = document.getElementById(SELECT_ID) as HTMLSelectElement;
+    const selector = document.querySelector(
+      "#" + SELECT_ID
+    ) as HTMLSelectElement;
+    // Add the eventListener to change the method if the select value has changed
     selector.addEventListener("click", (e) => {
       const select = e.target as HTMLSelectElement;
       const value = select.value as SketchKey;

@@ -1,7 +1,8 @@
 /**
  * The container that the sketch will live in.
+ * @param {string} id - The id for the sketch container element
  * @returns {string}
  */
-export default function SketchContainer(): string {
-  return `<div id="sketch-container"><p id="loader">initialising app...</p></div>`;
+export default function SketchContainer(id: string): string {
+  return `<div id="${id}"><p id="loader">initialising app...</p></div>`;
 }
