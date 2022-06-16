@@ -19,6 +19,7 @@ export default function particleSystemSketch(p: p5) {
   };
 
   p.draw = () => {
+    console.log("Drawing Particle system")
     p.background(10);
     system.addParticle(p);
     system.run(p);

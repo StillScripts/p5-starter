@@ -24,6 +24,7 @@ export default function polygonsSketch(p: p5) {
   };
 
   p.draw = () => {
+    console.log("Drawing rotating shapes")
     p.background(10);
     painter.run(p);
   };
