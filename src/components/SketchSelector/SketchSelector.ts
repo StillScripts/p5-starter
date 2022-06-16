@@ -21,7 +21,7 @@ export default function SketchSelector(
   return `
 	<select id=${id}>
 		${options.map(
-      (option) => `<option value=${convertToKey(option)}>${option}</option>`
+      (option) => `<option value=${option}>${option}</option>`
     )}
   </select>`;
 }
