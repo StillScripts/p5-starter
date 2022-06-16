@@ -1,2 +1,2 @@
-export { default as particleSystemSketch } from './ParticleSystem';
-export { default as polygonsSketch } from "./Polygons";
+export { default as particleSystemSketch } from "./ParticleSystem";
+export { default as polygonsSketch } from "./RotatingShapes";

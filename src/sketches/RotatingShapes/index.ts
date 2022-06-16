@@ -1,4 +1,4 @@
-import { Polygon } from "./classes";
+import { Circle, Ellipse, Polygon, RotatingShapes } from "./classes";
 import p5 from "p5";
 
 /**
@@ -11,18 +11,20 @@ import p5 from "p5";
  *
  */
 export default function polygonsSketch(p: p5) {
+  let painter: RotatingShapes;
+
   p.setup = () => {
     p.createCanvas(400, 400);
+    painter = new RotatingShapes([
+      new Circle("red", { x: -90, y: 50 }, 30),
+      new Ellipse("orange", { x: 120, y: -60 }, 40, 60),
+      new Polygon(p, "green", { x: 30, y: 90 }, 20, 4),
+      new Polygon(p, "blue", { x: -20, y: -20 }, 20, 6),
+    ]);
   };
 
   p.draw = () => {
-    p.background(50);
-    p.push();
-    p.translate(p.width / 2, p.height / 2);
-    p.beginShape();
-    const shape = new Polygon(p, 70, 5);
-    shape.points.forEach((point) => p.vertex(point.x, point.y));
-    p.endShape(p.CLOSE);
-    p.pop();
+    p.background(10);
+    painter.run(p);
   };
 }

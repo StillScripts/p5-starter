@@ -1,7 +1,9 @@
 import { Vector } from "p5";
 import type p5 from "p5";
 
-// A simple Particle class
+/**
+ * A simple Particle class
+ */
 export class Particle {
   acceleration: Vector;
   velocity: Vector;
@@ -14,17 +16,28 @@ export class Particle {
     this.lifespan = 255;
   }
 
+  /**
+   * Move the particle and render it on the canvas
+   * @param {p5} p - The p5.js object
+   */
   run(p: p5) {
     this.update();
     this.display(p);
   }
 
+  /**
+   * Move the particle based on its velocity and reduce its lifespan
+   */
   update() {
     this.velocity.add(this.acceleration);
     this.position.add(this.velocity);
     this.lifespan -= 2;
   }
 
+  /**
+   * Render the particle on the canvas
+   * @param {p5} p - The p5.js object 
+   */
   display(p: p5) {
     p.stroke(200, this.lifespan);
     p.strokeWeight(2);

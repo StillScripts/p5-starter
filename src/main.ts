@@ -5,7 +5,7 @@ import { Header, SketchSelector, SketchContainer } from "./components";
 
 const CONTAINER_ID = "sketch-container";
 const SELECT_ID = "animation-selector";
-let currentSketch: SketchKey = "ParticleSystem";
+let currentSketch: SketchKey = "Shapes";
 
 const app = document.querySelector<HTMLDivElement>("#app")!;
 
@@ -17,7 +17,16 @@ app.innerHTML = `
   </main>
 `;
 
-function fillSketchContainer() {
+function setSketch(key: SketchKey) {
+  try {
+    currentSketch = key; // Change the animation
+    renderSketch(); // Fill the sketch container with the new animation
+  } catch (error) {
+    console.log("Error with new selection: ", error);
+  }
+}
+
+function renderSketch() {
   // Get the sketch container
   const container = document.querySelector<HTMLDivElement>("#" + CONTAINER_ID);
   // Remove existing animation
@@ -33,15 +42,6 @@ function fillSketchContainer() {
   new p5(sketchMap[currentSketch], sketchDiv);
 }
 
-function selectNewSketch(key: SketchKey) {
-  try {
-    currentSketch = key; // Change the animation
-    fillSketchContainer(); // Fill the sketch container with the new animation
-  } catch (error) {
-    console.log("Error with new selection: ", error);
-  }
-}
-
 function init() {
   try {
     // Firstly, add an event listener to the existing select input
@@ -53,12 +53,12 @@ function init() {
       const select = e.target as HTMLSelectElement;
       const value = select.value as SketchKey;
       if (value !== currentSketch) {
-        selectNewSketch(value);
+        setSketch(value);
       }
     });
 
     // Get the sketch container and append a div that will hold the sketch canvas
-    fillSketchContainer();
+    renderSketch();
   } catch (error) {
     console.log("Error with initiating app: ", error);
   }
