@@ -34,6 +34,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 In the `src/sketches` folder you will find two example sketches.
 - **Rotating Shapes**: A simple demo of creating an array of shapes and applying rotation to move them around the canvas. 
+- **Clock**: An animation of an analog clock that ticks each second.
 - **Particle System**: A simulation of moving particles taken from the p5.js examples library converted into modern TypeScript classes. [View original](https://p5js.org/examples/simulate-particle-system.html).
 
 You can easily create new sketches by creating a new sketch in the `src/sketches` folder and adding it to the sketchMap object in `src/sketches/sketchMap.ts`. 

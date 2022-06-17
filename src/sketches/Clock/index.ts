@@ -2,8 +2,7 @@ import p5 from "p5";
 import { Clock } from "./classes";
 
 /**
- * This sketches is an animation of various 2D shapes rotating around the canvas.
- * It uses a global RotatingShapes object to store and render the shapes.
+ * This sketch is creates a clock with an hour, minute and seconds hand.
  *
  * @param {p5} p - The p5.js object
  *

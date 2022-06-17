@@ -13,7 +13,7 @@ export class Clock {
     this.radius = radius;
     this.secondsRadius = radius * 0.71;
     this.minutesRadius = radius * 0.6;
-    this.hoursRadius = radius * 0.5;
+    this.hoursRadius = radius * 0.45;
     this.diameter = radius * 1.7;
   }
 
@@ -38,7 +38,7 @@ export class Clock {
     // Draw the hands of the clock
     p.stroke(255);
     // Draw seconds
-    p.strokeWeight(1);
+    p.strokeWeight(2);
     p.line(
       cx,
       cy,
@@ -46,7 +46,7 @@ export class Clock {
       cy + p.sin(s) * this.secondsRadius
     );
     // Draw minutes
-    p.strokeWeight(2);
+    p.strokeWeight(3);
     p.line(
       cx,
       cy,
@@ -63,7 +63,7 @@ export class Clock {
     );
 
     // Draw the minute ticks
-    p.strokeWeight(2);
+    p.strokeWeight(3);
     p.beginShape(p.POINTS);
     for (let a = 0; a < 360; a += 6) {
       let angle = p.radians(a);
