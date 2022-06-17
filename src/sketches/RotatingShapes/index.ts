@@ -2,15 +2,13 @@ import { Circle, Ellipse, Polygon, RotatingShapes } from "./classes";
 import p5 from "p5";
 
 /**
- * This sketches is an animation of moving particles.
- * It uses a global ParticleSystem object to store and move particles.
- * It calls setup once to make a 600 x 400 canvas and initialise the ParticleSystem.
- * It calls the draw method continuously to run the animation.
+ * This sketches is an animation of various 2D shapes rotating around the canvas.
+ * It uses a global RotatingShapes object to store and render the shapes.
  *
  * @param {p5} p - The p5.js object
  *
  */
-export default function polygonsSketch(p: p5) {
+export default function rotatingShapesSketch(p: p5) {
   let painter: RotatingShapes;
 
   p.setup = () => {

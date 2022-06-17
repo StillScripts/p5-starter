@@ -14,7 +14,7 @@ export default function SketchSelector(
   sketch: SketchKey
 ): string {
   return `
-	<select id=${id}>
+	<select id="${id}">
 		${options.map(
       (option) =>
         `<option value=${option} ${

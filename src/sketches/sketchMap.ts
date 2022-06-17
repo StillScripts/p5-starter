@@ -1,8 +1,10 @@
 import type p5 from "p5";
-import { particleSystemSketch, polygonsSketch } from ".";
+
+import rotatingShapesSketch from "./RotatingShapes";
+import particleSystemSketch from "./ParticleSystem";
 
 export const sketchMap: Record<string, (p: p5) => void> = {
-  Shapes: polygonsSketch,
+  RotatingShapes: rotatingShapesSketch,
   ParticleSystem: particleSystemSketch,
 } as const;
 

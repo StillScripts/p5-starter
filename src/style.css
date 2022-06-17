@@ -7,7 +7,7 @@
 }
 
 header {
-  margin-top: 3.5rem;
+  margin-top: 2rem;
 }
 
 main {
@@ -32,4 +32,8 @@ a:hover {
 .link {
   margin: 8px;
   color: rgb(61, 61, 214);
+}
+
+.p5Canvas {
+  border-radius: 0.5rem;
 }
