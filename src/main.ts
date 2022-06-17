@@ -33,7 +33,7 @@ function init() {
     `;
 
     // Add an event listener to the select element
-    document.querySelector("#" + selectID)?.addEventListener("click", (e) => {
+    document.querySelector("#" + selectID)?.addEventListener("change", (e) => {
       const select = e.target as HTMLSelectElement;
       const value = select.value as SketchKey;
       if (value !== sketch) {
