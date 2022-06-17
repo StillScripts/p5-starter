@@ -1,10 +1,12 @@
 import type p5 from "p5";
 
-import rotatingShapesSketch from "./RotatingShapes";
+import clockSketch from "./Clock";
 import particleSystemSketch from "./ParticleSystem";
+import rotatingShapesSketch from "./RotatingShapes";
 
 export const sketchMap: Record<string, (p: p5) => void> = {
   RotatingShapes: rotatingShapesSketch,
+  Clock: clockSketch,
   ParticleSystem: particleSystemSketch,
 } as const;
 
