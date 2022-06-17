@@ -23,7 +23,11 @@ export function redirectUrl(url: string, params?: ParamsType) {
   }
 }
 
-export function getParam() {
+/**
+ * Get the sketch query param in the current URL
+ * @returns {SketchKey}
+ */
+export function getParam(): SketchKey {
 	const params = new URLSearchParams(window.location.search);
   const sketchParam = params.get("sketch") as string;
   return convertFromParam(sketchParam) as SketchKey;
