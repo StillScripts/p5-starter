@@ -1,3 +1,6 @@
+import { SketchKey } from "../sketches/sketchMap";
+import { convertFromParam } from "./stringFunctions";
+
 interface ParamsType { [key: string]: string | number };
 
 export function redirectUrl(url: string, params?: ParamsType) {
@@ -18,4 +21,10 @@ export function redirectUrl(url: string, params?: ParamsType) {
       throw new Error("The URL is not valid");
     }
   }
+}
+
+export function getParam() {
+	const params = new URLSearchParams(window.location.search);
+  const sketchParam = params.get("sketch") as string;
+  return convertFromParam(sketchParam) as SketchKey;
 }
