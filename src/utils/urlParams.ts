@@ -1,7 +1,9 @@
 import { SketchKey } from "../sketches/sketchMap";
 import { convertFromParam } from "./stringFunctions";
 
-interface ParamsType { [key: string]: string | number };
+interface ParamsType {
+  [key: string]: string | number;
+}
 
 export function redirectUrl(url: string, params?: ParamsType) {
   if (typeof window !== "undefined") {
@@ -28,7 +30,8 @@ export function redirectUrl(url: string, params?: ParamsType) {
  * @returns {SketchKey}
  */
 export function getParam(): SketchKey {
-	const params = new URLSearchParams(window.location.search);
+  const params = new URLSearchParams(window.location.search);
   const sketchParam = params.get("sketch") as string;
+  if (sketchParam === "rotating-shapes") return "Shapes"; // Fix old url issue
   return convertFromParam(sketchParam) as SketchKey;
 }
