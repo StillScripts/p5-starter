@@ -4,7 +4,6 @@ import { Clock } from "./classes";
 /**
  * This sketch is creates a clock with an hour, minute and seconds hand.
  * @param {p5} p - The p5.js object
- *
  */
 export default function clockSketch(p: p5) {
   let clock: Clock;

@@ -1,8 +1,8 @@
-import { ParticleSystem } from "./classes";
 import p5 from "p5";
+import { ParticleSystem } from "./classes";
 
 /**
- * This sketches is an animation of moving particles.
+ * This sketch is an animation of moving particles.
  * It uses a global ParticleSystem object to store and move particles. 
  * It calls setup once to make a 400 x 400 canvas and initialise the ParticleSystem. 
  * It calls the draw method continuously to run the animation.
@@ -19,7 +19,6 @@ export default function particleSystemSketch(p: p5) {
   };
 
   p.draw = () => {
-    console.log("Drawing Particle system")
     p.background(10);
     system.addParticle(p);
     system.run(p);

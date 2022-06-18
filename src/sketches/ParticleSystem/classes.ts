@@ -36,7 +36,7 @@ export class Particle {
 
   /**
    * Render the particle on the canvas
-   * @param {p5} p - The p5.js object 
+   * @param {p5} p - The p5.js object
    */
   display(p: p5) {
     p.stroke(200, this.lifespan);
@@ -45,14 +45,16 @@ export class Particle {
     p.ellipse(this.position.x, this.position.y, 12, 12);
   }
 
+  /**
+   * Return true when the lifespan is over
+   */
   isDead() {
     return this.lifespan < 0;
   }
 }
 
-// The class which holds all the particles
 /**
- * The class which holds all the particles
+ * The class that holds all the particles and causes them to move
  */
 export class ParticleSystem {
   origin: Vector;
@@ -62,19 +64,24 @@ export class ParticleSystem {
     this.particles = [];
   }
 
+  /**
+   * Run the animation by moving each particle in the system
+   * @param {p5} p - The p5.js object
+   */
   run(p: p5) {
-    for (let i = this.particles.length - 1; i >= 0; i--) {
-      let particle = this.particles[i];
+    this.particles.forEach((particle, i) => {
       particle.run(p);
       if (particle.isDead()) {
         this.particles.splice(i, 1);
       }
-    }
+    });
   }
 
+  /**
+   * Spawn a new particle into the system at the origin point
+   * @param {p5} p - The p5.js object
+   */
   addParticle(p: p5) {
-    this.particles.push(
-      new Particle(p, this.origin)
-    );
+    this.particles.push(new Particle(p, this.origin));
   }
 }

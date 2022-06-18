@@ -17,6 +17,12 @@ export class Clock {
     this.diameter = radius * 1.7;
   }
 
+  /**
+   * 
+   * @param {p5} p - The p5.js object 
+   * @param {number} cx - The x coordinate of the middle point 
+   * @param {number} cy - The y coordinate of the middle point
+   */
   tick(p: p5, cx: number, cy: number) {
     // Draw the clock background
     p.noStroke();
@@ -35,9 +41,8 @@ export class Clock {
       p.map(p.hour() + p.norm(p.minute(), 0, 60), 0, 24, 0, p.TWO_PI * 2) -
       p.HALF_PI;
 
-    // Draw the hands of the clock
     p.stroke(255);
-    // Draw seconds
+    // Draw seconds hand
     p.strokeWeight(2);
     p.line(
       cx,
@@ -45,7 +50,7 @@ export class Clock {
       cx + p.cos(s) * this.secondsRadius,
       cy + p.sin(s) * this.secondsRadius
     );
-    // Draw minutes
+    // Draw minutes hand
     p.strokeWeight(3);
     p.line(
       cx,
@@ -53,7 +58,7 @@ export class Clock {
       cx + p.cos(m) * this.minutesRadius,
       cy + p.sin(m) * this.minutesRadius
     );
-    // Draw hours
+    // Draw hours hand
     p.strokeWeight(4);
     p.line(
       cx,

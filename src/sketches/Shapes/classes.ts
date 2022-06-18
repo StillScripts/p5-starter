@@ -37,7 +37,7 @@ export class Circle extends Shape {
 }
 
 /**
- * An ellipse shape that will be rendered with p5.circle()
+ * An ellipse shape that will be rendered with p5.ellipse()
  */
 export class Ellipse extends Shape {
   constructor(
@@ -76,7 +76,7 @@ export class Polygon extends Shape {
   }
 
   /**
-   * Generate the corners of a regular polygon
+   * Generate the corners of a regular polygon, making each side an equal length
    * @param {p5} p - The p5.js object
    * @param {Coordinate} location - The central location of the shape on the canvas
    * @param {number} sides - The number of sides the shape has
