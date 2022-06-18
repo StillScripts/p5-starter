@@ -6,7 +6,6 @@ import { ParticleSystem } from "./classes";
  * It uses a global ParticleSystem object to store and move particles. 
  * It calls setup once to make a 400 x 400 canvas and initialise the ParticleSystem. 
  * It calls the draw method continuously to run the animation.
- *
  * @param {p5} p - The p5.js object
  *  
  */
