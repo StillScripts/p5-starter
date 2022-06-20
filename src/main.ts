@@ -13,7 +13,7 @@ import { getParam, redirectUrl } from "./utils/urlParams";
 function init() {
   const containerID = "sketch-container";
   const selectID = "animation-selector";
-  let sketch: SketchKey = "RotatingShapes"; // initialise with shapes as default sketch
+  let sketch: SketchKey = "Shapes"; // initialise with shapes as default sketch
 
   try {
     sketch = getParam();
