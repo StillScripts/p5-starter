@@ -14,7 +14,12 @@ export class BubbleSort {
     this.j = 0;
   }
 
-  generateValues(p: p5) {
+  /**
+   * Randomly create values for an unsorted list
+   * @param {p5} p - The p5.js object 
+   * @returns {number[]}
+   */
+  generateValues(p: p5): number[] {
     const startValues: number[] = [];
     for (let i = 0; i < p.width / 8; i++) {
       startValues.push(p.random(p.height));
@@ -22,6 +27,10 @@ export class BubbleSort {
     return startValues;
   }
 
+  /**
+   * Apply an iteration using the bubble sort algorithm
+   * @param {p5} p - The p5.js object 
+   */
   sort(p: p5) {
     for (let k = 0; k < 8; k++) {
       if (this.i < this.values.length) {
@@ -42,6 +51,10 @@ export class BubbleSort {
     }
   }
 
+  /**
+   * Show the values as a simple bar chart
+   * @param {p5} p - The p5.js object 
+   */
   display(p: p5) {
     for (let i = 0; i < this.values.length; i++) {
       p.stroke(100, 143, 143);
