@@ -27,11 +27,17 @@ export function redirectUrl(url: string, params?: ParamsType) {
 
 /**
  * Get the sketch query param in the current URL
+ * @param {SketchKey} defaultSketch
  * @returns {SketchKey}
  */
-export function getParam(): SketchKey {
-  const params = new URLSearchParams(window.location.search);
-  const sketchParam = params.get("sketch") as string;
-  if (sketchParam === "rotating-shapes") return "Shapes"; // Fix old url issue
-  return convertFromParam(sketchParam) as SketchKey;
+export function getSketchFromParams(defaultSketch: SketchKey): SketchKey {
+  try {
+    const params = new URLSearchParams(window.location.search);
+    const sketchParam = params.get("sketch") as string;
+    return convertFromParam(sketchParam) as SketchKey;
+  } catch (error) {
+    console.log("Url param error: " + error);
+    console.log("Showing the default Shapes animation due to the Url error");
+    return defaultSketch
+  }  
 }

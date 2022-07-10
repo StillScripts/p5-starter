@@ -3,7 +3,7 @@ import p5 from "p5";
 import { SketchKey, sketchMap } from "./sketches/sketchMap";
 import { Header, SketchSelector, SketchContainer } from "./components";
 import { convertToParams } from "./utils/stringFunctions";
-import { getParam, redirectUrl } from "./utils/urlParams";
+import { getSketchFromParams, redirectUrl } from "./utils/urlParams";
 
 /**
  * Initialise the application by getting the sketch from the url parameter,
@@ -11,33 +11,27 @@ import { getParam, redirectUrl } from "./utils/urlParams";
  * select input, and rendering the p5 sketch within the newly created #sketch div
  */
 function init() {
-  const containerID = "sketch-container";
-  const selectID = "animation-selector";
-  let sketch: SketchKey = "Shapes"; // initialise with shapes as default sketch
+  const CONTAINER_ID = "sketch-container";
+  const SELECT_ID = "animation-selector";
+  const sketch: SketchKey = getSketchFromParams(Object.keys(sketchMap)[0]); // get the sketch to render
+
+  const app = document.querySelector<HTMLDivElement>("#app")!; // get the app container <div> element
+  app.innerHTML = `
+    ${Header(`${sketch}`)}
+    <main>
+      ${SketchSelector(SELECT_ID, Object.keys(sketchMap), sketch)}
+      ${SketchContainer(CONTAINER_ID)}
+    </main>
+  `;
+
 
   try {
-    sketch = getParam();
-  } catch (error) {
-    console.log("Url param error: " + error);
-    console.log("Showing the default Shapes animation due to the Url error");
-  }
-
-  try {
-    const app = document.querySelector<HTMLDivElement>("#app")!;
-    app.innerHTML = `
-      ${Header(`${sketch}`)}
-      <main>
-        ${SketchSelector(selectID, Object.keys(sketchMap), sketch)}
-        ${SketchContainer(containerID)}
-      </main>
-    `;
-
     // Add an event listener to the select element
-    document.querySelector("#" + selectID)?.addEventListener("change", (e) => {
+    document.querySelector("#" + SELECT_ID)?.addEventListener("change", (e) => {
       const select = e.target as HTMLSelectElement;
       const value = select.value as SketchKey;
       if (value !== sketch) {
-        // Change the sketch if a new option has been selected
+        // Change the sketch if a new sketch option has been selected
         redirectUrl(window.location.href.split("?")[0], {
           sketch: convertToParams(value),
         });
@@ -45,7 +39,7 @@ function init() {
     });
 
     // Get the sketch container
-    const container = document.querySelector<HTMLDivElement>("#" + containerID);
+    const container = document.querySelector<HTMLDivElement>("#" + CONTAINER_ID);
     // Remove existing animation
     container?.removeChild(container.childNodes[0]);
     // Make a div for the sketch
