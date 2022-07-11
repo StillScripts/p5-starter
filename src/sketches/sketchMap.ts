@@ -1,9 +1,9 @@
 import type p5 from "p5";
-import bouncyBubbleSketch from "./BouncyBubbles";
-import bubbleSortSketch from "./BubbleSort";
-import clockSketch from "./Clock";
-import particleSystemSketch from "./ParticleSystem";
-import shapesSketch from "./Shapes";
+import bouncyBubbleSketch from "./BouncyBubbles/sketch";
+import bubbleSortSketch from "./BubbleSort/sketch";
+import clockSketch from "./Clock/sketch";
+import particleSystemSketch from "./ParticleSystem/sketch";
+import shapesSketch from "./Shapes/sketch";
 
 export const sketchMap: Record<string, (p: p5) => void> = {
   Shapes: shapesSketch,
