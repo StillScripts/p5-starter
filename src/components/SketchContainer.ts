@@ -1,5 +1,5 @@
 import p5 from "p5";
-import { SketchKey, sketchMap } from "../../sketches/sketchMap";
+import { SketchKey, sketchMap } from "../sketches/sketchMap";
 
 /**
  * The container that the sketch will live in.

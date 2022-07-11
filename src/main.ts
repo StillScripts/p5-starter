@@ -1,9 +1,9 @@
 import "./style.css";
 import { SketchKey, sketchMap } from "./sketches/sketchMap";
 import { Header, SketchSelector, SketchContainer } from "./components";
+import { addListenerToSelect } from "./components/SketchSelector";
+import { renderSketch } from "./components/SketchContainer";
 import { getSketchFromParams } from "./utils/urlParams";
-import { addListenerToSelect } from "./components/SketchSelector/SketchSelector";
-import { renderSketch } from "./components/SketchContainer/SketchContainer";
 
 /**
  * Initialise the application by getting the sketch from the url parameter,
@@ -25,8 +25,8 @@ function init() {
       ${SketchContainer(CONTAINER_ID)}
     </main>
   `;
-  
-  addListenerToSelect(SELECT_ID, sketch); 
+
+  addListenerToSelect(SELECT_ID, sketch);
 
   renderSketch(CONTAINER_ID, sketch);
 }

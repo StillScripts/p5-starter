@@ -1,4 +1,4 @@
-import { spaceWords } from "../../utils/stringFunctions";
+import { spaceWords } from "../utils/stringFunctions";
 
 /**
  * The header for the page which displays the information about the app
