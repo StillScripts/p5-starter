@@ -18,9 +18,9 @@ export default function SketchSelector(
 	<select id="${id}">
 		${options.map(
       (option) =>
-        `<option value=${option} ${
-          option === sketch && "selected"
-        }>${spaceWords(option)}</option>`
+        `<option value=${option} ${option === sketch && "selected"}>
+          ${spaceWords(option)}
+         </option>`
     )}
   </select>`;
 }
