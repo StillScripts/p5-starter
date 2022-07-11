@@ -19,13 +19,12 @@ function init() {
 
   // Update the innerHTML of the app container to contain the header, select input, and the sketch.
   app.innerHTML = `
-    ${Header(`${sketch}`)}
+    ${Header(sketch, true)}
     <main>
       ${SketchSelector(SELECT_ID, Object.keys(sketchMap), sketch)}
       ${SketchContainer(CONTAINER_ID)}
     </main>
   `;
-
   
   addListenerToSelect(SELECT_ID, sketch); 
 
