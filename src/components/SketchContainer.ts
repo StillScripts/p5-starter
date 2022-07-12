@@ -1,4 +1,4 @@
-import p5 from "p5";
+import p5 from "p5"; // Import of the p5 object that is used for all sketches
 import { SketchKey, sketchMap } from "../sketches/sketchMap";
 
 /**

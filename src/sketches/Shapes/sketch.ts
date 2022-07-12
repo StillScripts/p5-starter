@@ -1,5 +1,5 @@
 import { Circle, Ellipse, Polygon, RotatingShapes } from "./classes";
-import p5 from "p5";
+import type p5 from "p5";
 
 /**
  * This sketch is an animation of various 2D shapes rotating around the canvas.

@@ -1,4 +1,4 @@
-import p5 from "p5";
+import type p5 from "p5";
 
 /**
  * A class which uses the bubble sorting algorithm and displays
