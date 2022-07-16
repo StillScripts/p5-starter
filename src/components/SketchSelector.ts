@@ -1,6 +1,6 @@
 import { SketchKey } from "../sketches/sketchMap";
-import { convertToParam, spaceWords } from "../utils/common";
-import { redirectUrl } from "../utils/urlParams";
+import { spaceWords } from "../utils/common";
+import { convertToParam, redirectUrl } from "../utils/urlParams";
 
 /**
  * A select input that is used to change the existing animation.
