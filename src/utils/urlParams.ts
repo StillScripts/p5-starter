@@ -5,6 +5,11 @@ interface ParamsType {
   [key: string]: string | number;
 }
 
+/**
+ * Reload the page with new URL parameters to load a new sketch
+ * @param {string} url - The url path of the site
+ * @param {string} params - The new url parameters to use
+ */
 export function redirectUrl(url: string, params?: ParamsType) {
   if (typeof window !== "undefined") {
     try {
@@ -27,8 +32,8 @@ export function redirectUrl(url: string, params?: ParamsType) {
 
 /**
  * Get the sketch query param in the current URL
- * @param {SketchKey} defaultSketch
- * @returns {SketchKey}
+ * @param {SketchKey} defaultSketch - A basic sketch to use as a fallback
+ * @returns {SketchKey} - The key of the sketch to use for the p5.js animation
  */
 export function getSketchFromParams(defaultSketch: SketchKey): SketchKey {
   try {

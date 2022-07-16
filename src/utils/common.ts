@@ -21,7 +21,7 @@ export function spaceWords(key: string): string {
  * @param {string} key - The text that is being converted
  * @returns {string} - The url param that has been generated
  */
-export function convertToParams(key: string): string {
+export function convertToParam(key: string): string {
   let param = "";
   for (let i = 0; i < key.length; i++) {
     if (key[i] === key[i].toUpperCase() && i > 0) {
@@ -33,7 +33,8 @@ export function convertToParams(key: string): string {
 }
 
 /**
- * Convert a url param into a readable key
+ * Convert a url param into a readable key. For example -
+ * "fun-animation" -> "FunAnimation"
  * @param {string} param - The param from the query string
  * @returns {string} - The key for the sketchMap
  */

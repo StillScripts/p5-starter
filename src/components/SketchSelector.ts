@@ -1,5 +1,5 @@
 import { SketchKey } from "../sketches/sketchMap";
-import { convertToParams, spaceWords } from "../utils/common";
+import { convertToParam, spaceWords } from "../utils/common";
 import { redirectUrl } from "../utils/urlParams";
 
 /**
@@ -40,7 +40,7 @@ export function addListenerToSelect(id: string, currentSketch: SketchKey) {
       if (value !== currentSketch) {
         // Change the sketch if a new sketch option has been selected
         redirectUrl(window.location.href.split("?")[0], {
-          sketch: convertToParams(value),
+          sketch: convertToParam(value),
         });
       }
     });
