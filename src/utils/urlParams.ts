@@ -1,5 +1,5 @@
 import { SketchKey } from "../sketches/sketchMap";
-import { convertFromParam } from "./stringFunctions";
+import { convertFromParam } from "./common";
 
 interface ParamsType {
   [key: string]: string | number;

@@ -1,5 +1,5 @@
 import { SketchKey } from "../sketches/sketchMap";
-import { convertToParams, spaceWords } from "../utils/stringFunctions";
+import { convertToParams, spaceWords } from "../utils/common";
 import { redirectUrl } from "../utils/urlParams";
 
 /**
