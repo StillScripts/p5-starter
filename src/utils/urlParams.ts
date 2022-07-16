@@ -1,4 +1,4 @@
-import type { SketchKey } from "../sketches/sketchMap";
+import { type SketchKey, sketchMap } from "../sketches/sketchMap";
 
 interface ParamsType {
   [key: string]: string | number;
@@ -77,7 +77,12 @@ export function getSketchFromParams(defaultSketch: SketchKey): SketchKey {
   try {
     const params = new URLSearchParams(window.location.search);
     const sketchParam = params.get("sketch") as string;
-    return convertFromParam(sketchParam) as SketchKey;
+    const key = convertFromParam(sketchParam) as SketchKey;
+    if (Object.keys(sketchMap).includes(key)) {
+      return key;
+    } else {
+      return defaultSketch;
+    }
   } catch (error) {
     console.log("Url param error: " + error);
     console.log("Showing the default Shapes animation due to the Url error");
