@@ -1,3 +1,5 @@
+import { SketchKey } from "../sketches/sketchMap";
+
 /**
  * Put a space between words where there is a capital letter.
  * For example - "ParticleSystem" -> "Particle System"
@@ -16,12 +18,12 @@ export function spaceWords(key: string): string {
 }
 
 /**
- * Convert a string of text into a simple url param. For example -
- * "Fun Animation " -> "fun-animation"
- * @param {string} key - The text that is being converted
+ * Convert a Sketch Key into a simple url param. For example -
+ * "FunAnimation" -> "fun-animation"
+ * @param {SketchKey} key - The text that is being converted
  * @returns {string} - The url param that has been generated
  */
-export function convertToParam(key: string): string {
+export function convertToParam(key: SketchKey): string {
   let param = "";
   for (let i = 0; i < key.length; i++) {
     if (key[i] === key[i].toUpperCase() && i > 0) {
@@ -33,12 +35,12 @@ export function convertToParam(key: string): string {
 }
 
 /**
- * Convert a url param into a readable key. For example -
+ * Convert a url param into a key for a sketch. For example -
  * "fun-animation" -> "FunAnimation"
  * @param {string} param - The param from the query string
  * @returns {string} - The key for the sketchMap
  */
-export function convertFromParam(param: string): string {
+export function convertFromParam(param: string): SketchKey {
   const words = param.trim().split("-");
   let key = "";
   words.forEach((word) => {
@@ -51,5 +53,5 @@ export function convertFromParam(param: string): string {
       }
     }
   });
-  return key;
+  return key as SketchKey;
 }

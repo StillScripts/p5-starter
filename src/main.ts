@@ -14,7 +14,7 @@ function init() {
   const CONTAINER_ID = "sketch-container";
   const SELECT_ID = "animation-selector";
 
-  const sketch: SketchKey = getSketchFromParams(Object.keys(sketchMap)[0]); // get the sketch to render
+  const sketch: SketchKey = getSketchFromParams(Object.keys(sketchMap)[0] as SketchKey); // get the sketch to render
   const app = document.querySelector<HTMLDivElement>("#app")!; // get the app container <div> element
 
   // Update the innerHTML of the app container to contain the header, select input, and the sketch.

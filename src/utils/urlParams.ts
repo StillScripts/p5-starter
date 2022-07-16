@@ -43,6 +43,6 @@ export function getSketchFromParams(defaultSketch: SketchKey): SketchKey {
   } catch (error) {
     console.log("Url param error: " + error);
     console.log("Showing the default Shapes animation due to the Url error");
-    return defaultSketch
-  }  
+    return defaultSketch;
+  }
 }
