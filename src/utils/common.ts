@@ -1,5 +1,3 @@
-import { SketchKey } from "../sketches/sketchMap";
-
 /**
  * Put a space between words where there is a capital letter.
  * For example - "ParticleSystem" -> "Particle System"

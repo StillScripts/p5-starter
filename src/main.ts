@@ -1,5 +1,5 @@
 import "./style.css";
-import { SketchKey, sketchMap } from "./sketches/sketchMap";
+import { type SketchKey, sketchMap } from "./sketches/sketchMap";
 import { Header, SketchSelector, SketchContainer } from "./components";
 import { addListenerToSelect } from "./components/SketchSelector";
 import { renderSketch } from "./components/SketchContainer";

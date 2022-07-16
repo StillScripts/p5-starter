@@ -1,4 +1,4 @@
-import { SketchKey } from "../sketches/sketchMap";
+import type { SketchKey } from "../sketches/sketchMap";
 import { spaceWords } from "../utils/common";
 import { convertToParam, redirectUrl } from "../utils/urlParams";
 

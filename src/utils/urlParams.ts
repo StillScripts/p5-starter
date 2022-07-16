@@ -1,4 +1,4 @@
-import { SketchKey } from "../sketches/sketchMap";
+import type { SketchKey } from "../sketches/sketchMap";
 
 interface ParamsType {
   [key: string]: string | number;
