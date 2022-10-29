@@ -1,6 +1,6 @@
 # P5.js Starter
 
-The easiest way for developers to create complex animations and design images in the browser using the p5.js library. [**View live demo**](https://unrivaled-melomakarona-070349.netlify.app/?sketch=rotating-shapes)
+The easiest way for developers to create complex animations and design images in the browser using the p5.js library. [**View live demo**](https://p5-starter-vite.netlify.app/)
 
 This starter repo comes equipped with [**p5.js**](https://p5js.org/), [**Vite**](https://vitejs.dev/), and [**TypeScript**](https://www.typescriptlang.org/), to enable a great developer experience. Additionally, **4 example sketches** have been included to provide samples of what can be done and help with learning how p5.js works. 
 
@@ -35,6 +35,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 In the `src/sketches` folder you will find four example sketches.
 - **Shapes**: A simple demo of creating an array of shapes and applying rotation to move them around the canvas. Based on [this](https://p5js.org/examples/form-regular-polygon.html).
 - **Clock**: An animation of an analog clock that ticks each second. Based on [this](https://p5js.org/examples/input-clock.html).
+- **Bubble Sort**: An illustration of the bubble sort algorithm. Based on [this](https://p5js.org/examples)
 - **Particle System**: A simulation of moving particles spawning and fading. Based on [this](https://p5js.org/examples/simulate-particle-system.html).
 - **Bouncy Bubbles**: A simulation of a group of bubbles moving around and bouncing into each other until gravity brings them to the ground. Based on[this](https://p5js.org/examples/motion-bouncy-bubbles.html).
 
