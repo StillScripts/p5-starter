@@ -6,21 +6,20 @@ This starter repo comes equipped with [**p5.js**](https://p5js.org/), [**Vite**]
 
 ## Getting Started
 
-Clone the repo: 
+#### Clone the repo: 
 
 ```bash
 git clone https://github.com/StillScripts/p5-starter.git
 ```
 
-Install the dependencies:
+#### Install the dependencies:
 ```bash
 npm install
 # or 
 yarn install
 ```
 
-Run the development server:
-
+#### Run the development server:
 ```bash
 npm run dev
 # or
@@ -37,7 +36,7 @@ In the `src/sketches` folder you will find four example sketches.
 - **Clock**: An animation of an analog clock that ticks each second. Based on [this](https://p5js.org/examples/input-clock.html).
 - **Bubble Sort**: An illustration of the bubble sort algorithm. Based on [this](https://p5js.org/examples)
 - **Particle System**: A simulation of moving particles spawning and fading. Based on [this](https://p5js.org/examples/simulate-particle-system.html).
-- **Bouncy Bubbles**: A simulation of a group of bubbles moving around and bouncing into each other until gravity brings them to the ground. Based on[this](https://p5js.org/examples/motion-bouncy-bubbles.html).
+- **Bouncy Bubbles**: A simulation of a group of bubbles moving around and bouncing into each other until gravity brings them to the ground. Based on [this](https://p5js.org/examples/motion-bouncy-bubbles.html).
 
 
 You can easily create new sketches by creating a new sketch in the `src/sketches` folder and adding it to the sketchMap object in `src/sketches/sketchMap.ts`. 
@@ -58,4 +57,4 @@ To ensure that the project still uses a component structure similar to JavaScrip
 This project is accepting pull requests. Feel free to add additional example sketches or fix any issues you see. Let's work together to enable frontend developers to turn their code into art by offering the best place to get started with p5.js! :grinning: 
 
 ## Live Demo
-View a live demo of this project [here](https://unrivaled-melomakarona-070349.netlify.app/?sketch=rotating-shapes) 
+View a live demo of this project [here](https://p5-starter-vite.netlify.app/) 
