@@ -14,3 +14,8 @@ export function spaceWords(key: string): string {
   }
   return newString;
 }
+
+/** Typesafe version of Object.keys */
+export const getKeys = Object.keys as <T extends object>(
+  obj: T
+) => Array<keyof T>;

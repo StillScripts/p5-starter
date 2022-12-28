@@ -4,6 +4,7 @@ import { Header, SketchSelector, SketchContainer } from "./components";
 import { addListenerToSelect } from "./components/SketchSelector";
 import { renderSketch } from "./components/SketchContainer";
 import { getSketchFromParams } from "./utils/urlParams";
+import { getKeys } from "./utils/common";
 
 /**
  * Initialise the application by getting the sketch from the url parameter,
@@ -14,14 +15,14 @@ function init() {
   const CONTAINER_ID = "sketch-container";
   const SELECT_ID = "animation-selector";
 
-  const sketch: SketchKey = getSketchFromParams(Object.keys(sketchMap)[0] as SketchKey); // get the sketch to render
+  const sketch: SketchKey = getSketchFromParams(getKeys(sketchMap)[0]); // get the sketch to render
   const app = document.querySelector<HTMLDivElement>("#app")!; // get the app container <div> element
 
   // Update the innerHTML of the app container to contain the header, select input, and the sketch.
   app.innerHTML = `
     ${Header(sketch, true)}
     <main>
-      ${SketchSelector(SELECT_ID, Object.keys(sketchMap), sketch)}
+      ${SketchSelector(SELECT_ID, getKeys(sketchMap), sketch)}
       ${SketchContainer(CONTAINER_ID)}
     </main>
   `;

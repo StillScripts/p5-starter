@@ -1,4 +1,5 @@
 import { type SketchKey, sketchMap } from "../sketches/sketchMap";
+import { getKeys } from "./common";
 
 interface ParamsType {
   [key: string]: string | number;
@@ -77,8 +78,8 @@ export function getSketchFromParams(defaultSketch: SketchKey): SketchKey {
   try {
     const params = new URLSearchParams(window.location.search);
     const sketchParam = params.get("sketch") as string;
-    const key = convertFromParam(sketchParam) as SketchKey;
-    if (Object.keys(sketchMap).includes(key)) {
+    const key = convertFromParam(sketchParam);
+    if (getKeys(sketchMap).includes(key)) {
       return key;
     } else {
       return defaultSketch;
